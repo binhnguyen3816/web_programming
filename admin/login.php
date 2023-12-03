@@ -35,7 +35,8 @@ $ketqua = $conn->query($sql);
     $password = $_POST['password'];
 
     while ($row = $ketqua->fetch_assoc()) {
-      if ($row["email"] == $email && password_verify($password, $row["password"])) {
+      // if ($row["email"] == $email && password_verify($password, $row["password"])) {
+      if ($row["email"] == $email && $password == $row["password"]) {
         $_SESSION["email_ad"] = $email;
         header('location: index.php');
         break;
