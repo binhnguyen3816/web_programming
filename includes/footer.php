@@ -2,14 +2,12 @@
     code {
         color:white;
     }
-
     .footer_share {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh; /* Adjust this value based on your layout */
     }
-
     .list-inline {
         list-style: none;
         padding: 0;
@@ -29,7 +27,7 @@
             display: grid;
             grid-template-columns: auto;
             justify-content: center;
-        }
+    }
     @media (min-width: 768px) and (max-width: 1280px){
         .footer-row{
             display: grid;
@@ -44,7 +42,7 @@
         <div class="row footer-row">
             <div class="col-md-3 pt-5 brand-name">
                 <div>
-                <img style="width: 70%;" class="mb-3 mx-auto" src="https://wujiateavn.com/files/systems/logo-l6m1s0u2.png" alt="logo.png">
+                <a href="<?php echo $rootPath?>"><img style="width: 70%;" class="mb-3 mx-auto" src="https://wujiateavn.com/files/systems/logo-l6m1s0u2.png" alt="logo.png"></a>
                 </div>
                 <div class="col-auto me-auto">
                     <ul class="list-inline text-left footer-icons">

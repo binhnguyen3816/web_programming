@@ -1,10 +1,10 @@
 <?php
 session_start();
 ob_start();
-$rootPath = '/Lap_trinh_web/';
+$rootPath = '/Lap_trinh_web';
 require_once '../database/DB.php';
 
-$sql = "SELECT email, password FROM user";
+$sql = "SELECT email, password FROM user WHERE active = 1";
 $ketqua = $conn->query($sql);
 ?>
 
@@ -14,10 +14,11 @@ $ketqua = $conn->query($sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Đăng nhập</title>
     <link rel="stylesheet"  href="https://site-assets.fontawesome.com/releases/v6.1.2/css/all.css">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?= $rootPath ?>/public/css/showPassword.css">
   </head>
 <body >
 
@@ -46,16 +47,23 @@ if (isset($_POST['login_user'])) {
       $errorEmail = "Email không tồn tại";
     }
     
-    while ($row = $ketqua->fetch_assoc()) {
-      if ($row["email"] == $email && password_verify($password, $row["password"])) {
-        $_SESSION["email_user"] = $email;
-        if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) 
-            header('location: check_out.php');
-          else
-            header('location: my_account.php');
-      } else {
-        $is_validated = false;
-        $tb = 'Sai email hoặc mật khẩu';
+
+    if ($ketqua->num_rows == 0) {
+      $tb = 'Tài khoản không tồn tại hoặc chưa xác thực!';
+      $is_validated = false;
+    }
+    if ($ketqua->num_rows > 0) {
+      while ($row = $ketqua->fetch_assoc()) {
+        if ($row["email"] == $email && password_verify($password, $row["password"])) {
+          $_SESSION["email_user"] = $email;
+          if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) 
+              header('location: check_out.php');
+            else
+              header('location: my_account.php');
+        } else {
+          $is_validated = false;
+          $tb = 'Sai email hoặc mật khẩu';
+        }
       }
     }
 
@@ -80,9 +88,20 @@ if (isset($_POST['login_user'])) {
         <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
         <?php
           if (isset($_SESSION['success'])) {
-            echo '<div class="mb-2 text-center"><div class="alert alert-success">'.$_SESSION['success'].'</div></div>';
+              echo '<div id="success-message" class="mb-2 text-center"><div class="alert alert-success">'.$_SESSION['success'].'</div></div>';
+              // Xóa session 'success' sau khi hiển thị để tránh hiển thị lại khi trang được làm mới
+              unset($_SESSION['success']);
           }
-        ?>
+          ?>
+          <script>
+            // Sử dụng JavaScript để ẩn thông báo sau 2 giây
+            setTimeout(function() {
+                var successMessage = document.getElementById('success-message');
+                if (successMessage) {
+                    successMessage.style.display = 'none';
+                }
+            }, 2000);
+          </script>
           <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style="color:#002A54"> 
             Đăng nhập 
           </p>
@@ -94,17 +113,21 @@ if (isset($_POST['login_user'])) {
               </div>
             </div>
             <div class="d-flex flex-row align-items-center mb-4">
-              <div class="input-group flex-nowrap">
+              <div class="input-group flex-nowrap password-container">
                 <span class="input-group-text"><i class="fa-light fa-key"></i></span>
-                <input type="password" class="form-control" name="password" value="<?php echo $password; ?>" placeholder="Password">
+                <input type="password" id="password" class="form-control" name="password" value="<?php echo $password; ?>" placeholder="Password">
+                <span>
+                  <i class="far fa-eye" id="toggle-password"></i>
+                </span>
               </div>
             </div>
+            
             <p>
               Bạn chưa có tài khoản?
-              <a href="/Lap_trinh_web/sign_up.php">Đăng kí ngay.</a>
+              <a href="/Lap_trinh_web/sign_up.php">Đăng kí ngay</a>
             </p>
             <p class="mt-2 mb-2">
-              Quên mật khẩu <a href="#">click here</a>
+              Quên mật khẩu? <a href="/Lap_trinh_web/auth/forgot_password.php">Lấy lại mật khẩu</a>
             </p>
                 <?php 
                     if(!empty($tb)) {
@@ -137,6 +160,7 @@ if (isset($_POST['login_user'])) {
     require '../includes/footer.php';
 ?>
 <!-- JavaScript Bundle with Popper -->
+<script src="<?= $rootPath ?>/public/javascripts/showPassword.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>

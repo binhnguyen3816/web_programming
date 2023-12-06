@@ -1,11 +1,15 @@
 <?php
 $rootPath = '/Lap_trinh_web';
 require_once './database/DB.php';
-// require_once './PHPMailer/src/Exception.php';
-// require_once './PHPMailer/src/PHPMailer.php';
-// require_once './PHPMailer/src/SMTP.php';
 
-// include_once './helper/sendMail.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require './PHPMailer/src/Exception.php';
+require './PHPMailer/src/PHPMailer.php';
+require './PHPMailer/src/SMTP.php';
+
+include_once './helper/sendMail.php';
 
 ?>
 
@@ -54,7 +58,8 @@ require_once './database/DB.php';
         }
         if ($is_validated) {
           $hashPassword = password_hash($password, PASSWORD_DEFAULT);
-          $verifyCode = substr(number_format(time() * rand(), 0, '', ''), 0, 9);
+          $verifyCode = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
+          // $verifyCode = isset($_SESSION['generated_otp']) ? $_SESSION['generated_otp'] : '';
           $sql = "INSERT INTO user (name, email, phone, address, password, verify_code) 
                   VALUES ('$name', '$email', '$phone', '$address', '$hashPassword', '$verifyCode')";
           if ($conn->query($sql) === TRUE) {
@@ -67,12 +72,13 @@ require_once './database/DB.php';
               // print_r($receiver);
               // exit;
               // verifyEmail($mail, $receiver, $verifyCode);
-              header("Location: ./customer/login.php");
-              // header("Location: ./customer/login.php");
+              // header("Location: ./customer/verifyOTP.php");
+              verifyEmail($mail, $receiver, $verifyCode);
+              header("Location: ./auth/register.php?email=$email");
           } else {
               echo "Error: ". $conn->error;
           }
-        }   
+        }
     }
 ?>
 
@@ -82,7 +88,8 @@ require_once './database/DB.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign up</title>
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="<?= $rootPath ?>/public/css/showPassword.css">
     <link rel="stylesheet"  href="https://site-assets.fontawesome.com/releases/v6.1.2/css/all.css">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -155,9 +162,12 @@ require_once './database/DB.php';
               </div>
             </div>
             <div class="d-flex flex-row align-items-center mb-4">
-              <div class="input-group flex-nowrap">
+              <div class="input-group flex-nowrap password-container">
                 <span class="input-group-text"><i class="fa-light fa-key"></i></span>
                 <input id="password" type="password" name="password" class="form-control" placeholder="Password" value='<?php echo $password?>'>
+                <span>
+                  <i class="far fa-eye" id="toggle-password"></i>
+                </span>
                 <small>Error message</small>
               </div>
             </div>
@@ -167,9 +177,12 @@ require_once './database/DB.php';
                 </div>
             </div>
             <div class="d-flex flex-row align-items-center mb-4">
-              <div class="input-group flex-nowrap">
+              <div class="input-group flex-nowrap password-container">
                 <span class="input-group-text"><i class="fa-light fa-key"></i></span>
                 <input id="password2" type="password" name="re_password" class="form-control" placeholder="Re-Password" value='<?php echo $re_password?>'>
+                <span>
+                  <i class="far fa-eye" id="toggle-password2"></i>
+                </span>
                 <small>Error message</small>
               </div>
             </div>
@@ -196,6 +209,7 @@ require_once './database/DB.php';
 ?>
 <!-- JavaScript Bundle with Popper -->
 <!-- <script src="./public/javascripts/validate.js"></script> -->
+<script src="<?= $rootPath ?>/public/javascripts/showPassword.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script src="./public/javascripts/loadCartHeader.js"></script>

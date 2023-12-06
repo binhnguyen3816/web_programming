@@ -61,7 +61,7 @@ require_once './database/DB.php';
                         ?>
                                 <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
                                     <div class="card h-100" style="height: 200px">
-                                        <div class="product-img" style="background-image: url('<?php echo $row['image'] ?>');background-size:260px; height:250px; padding-top: 50%;"></div>
+                                        <div class="product-img" style="background-image: url('<?php echo $row['image'] ?>');background-size : 100% auto; height:250px; padding-top: 50%;"></div>
                                         <div class="card-body d-flex flex-column justify-content-between">
                                             <div class="d-flex flex-column justify-content-start">
                                                 <h6 class="card-title"><?php echo $row["title"]; ?></h6>
