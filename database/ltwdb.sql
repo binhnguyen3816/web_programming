@@ -2,17 +2,15 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 02, 2023 at 09:13 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Host: 127.0.0.1:3307
+-- Generation Time: Mar 14, 2024 at 08:22 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-CREATE Database ltwdb;
-USE ltwdb;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -45,8 +43,7 @@ CREATE TABLE `admin` (
 INSERT INTO `admin` (`admin_id`, `email`, `password`, `name`, `role`, `updated_at`) VALUES
 (1, 'hienlq16103@gmail.com', 'hienlqkt54', 'Le_Quang_Hien', 1, '2023-11-30 06:30:20'),
 (2, 'binhnguyen3816@gmail.com', 'binhnguyen3816', 'Nguyen_Duc_Binh', 1, '2023-11-15 18:17:08'),
-(3, 'ndtgoat@gmail.com', '123', 'Nguyen_Duy_Tung', 1, '2023-11-30 06:30:51'),
-(4, 'luan.nguyenexecutive@hcmut.edu.vn', '123', 'Nguyễn Công Anh Luân', 1, '2023-11-30 06:30:51');
+(3, 'ndtgoat@gmail.com', '123', 'Nguyen_Duy_Tung', 1, '2023-11-30 06:30:51');
 
 -- --------------------------------------------------------
 
@@ -96,7 +93,9 @@ INSERT INTO `contact` (`id`, `username`, `email`, `message`, `status`, `created_
 (4, 'Binh', 'binh.nguyenhelloworld@hcmut.edu.vn', 'Use these to celebrate customer anniversaries, an upcoming holiday, or birthday. “Happy Birthday Bình! As an extra-special thank you for being a loyal customer, here’s $50 on us. Use it toward any of your favorite products.', 0, '2023-11-16 07:49:39'),
 (5, 'Nguyễn Đức Bình', 'binh381672943@gmail.com', 'đây là tin nhắn từ phần liên hệ', 0, '2023-11-23 05:54:52'),
 (6, 'Nguyễn Đức Bình', 'binh381672943@gmail.com', 'this is a contact message', 0, '2023-11-23 07:36:10'),
-(7, 'Nguyễn Đức Bình', 'binh381672943@gmail.com', 'this is a contact message', 0, '2023-11-23 07:36:34');
+(7, 'Nguyễn Đức Bình', 'binh381672943@gmail.com', 'this is a contact message', 0, '2023-11-23 07:36:34'),
+(8, 'Nguyễn Đức Bình', 'bla@gmail.com', 'tin nhawns bla', 0, '2023-12-01 09:02:06'),
+(9, 'Nguyễn Đức Bình', 'binh381672943@gmail.com', 'tin nhắn liên hệ mẫu', 0, '2023-12-02 08:09:30');
 
 -- --------------------------------------------------------
 
@@ -121,16 +120,16 @@ CREATE TABLE `order` (
 --
 
 INSERT INTO `order` (`order_id`, `user_id`, `payment_method`, `payment`, `address_receiver`, `phone_receiver`, `updated_at`, `status`, `name_receiver`) VALUES
-(16, 38, 'Tiền mặt khi nhận hàng', 357000, 'Ký túc xá Khu A Đại học quốc gia', '0394433666', '2023-11-30 09:32:33', 'Đang xử lý', 'Nguyễn Đức Bình'),
-(17, 38, 'Tiền mặt khi nhận hàng', 38000, 'ktz khu A', '0394433666', '2023-11-23 05:22:52', 'Đang xử lý', 'Nguyễn Đức Bình'),
-(18, 38, 'Tiền mặt khi nhận hàng', 38000, 'ktz khu A', '0394433666', '2023-11-23 08:25:22', 'Đang xử lý', 'Nguyễn Đức Bình'),
 (19, 46, 'Tiền mặt khi nhận hàng', 0, 'Ký túc xá Khu B Đại học quốc gia', '0359110455', '2023-11-30 09:33:52', 'Đang xử lý', 'Đang xử lý'),
 (20, 53, 'Tiền mặt khi nhận hàng', 123, 'Ký túc xá Khu A Đại học quốc gia', '', '2023-11-30 09:44:35', 'Đang xử lý', 'Đang xử lý'),
 (21, 54, 'Tiền mặt khi nhận hàng', 123, 'Ký túc xá Khu A Đại học quốc gia', '', '2023-11-30 09:45:44', 'Đang xử lý', 'Đang xử lý'),
 (22, 52, 'Tiền mặt khi nhận hàng', 123, 'Ký túc xá Khu A Đại học quốc gia', '0359110455', '2023-11-30 09:46:22', 'Đang xử lý', 'Đang xử lý'),
-(23, 38, 'Tiền mặt khi nhận hàng', 123, 'Ký túc xá Khu A Đại học quốc gia', '', '2023-11-30 09:47:02', 'Đang xử lý', 'Đang xử lý'),
-(24, 47, 'Tiền mặt khi nhận hàng', 123, '12 Nguyễn Huệ', '', '2023-11-30 09:50:31', 'Đang xử lý', 'Đang xử lý'),
-(25, 53, 'Tiền mặt khi nhận hàng', 123, 'Ký túc xá Khu A Đại học quốc gia', '', '2023-11-30 09:51:06', 'Đang xử lý', 'Đang xử lý');
+(25, 53, 'Tiền mặt khi nhận hàng', 123, 'Ký túc xá Khu A Đại học quốc gia', '', '2023-11-30 09:51:06', 'Đang xử lý', 'Đang xử lý'),
+(26, 56, 'Tiền mặt khi nhận hàng', 35000, 'ktx khu A', '0394433666', '2023-12-01 15:01:14', 'Đã giao', 'Nguyễn Đức Bình'),
+(27, 56, 'Tiền mặt khi nhận hàng', 35000, 'ktx khu A ĐHQG', '0394433666', '2023-12-02 08:19:34', 'Đã giao', 'Nguyễn Đức Bình'),
+(28, 56, 'Tiền mặt khi nhận hàng', 16000, 'ktx khu A ĐHQG', '0394433666', '2023-12-03 07:05:28', 'Đang xử lý', 'Nguyễn Đức Bình'),
+(34, 63, 'Tiền mặt khi nhận hàng', 16000, 'Nguyễn Đức Bình-hát', '0394433666', '2023-12-06 07:44:01', 'Đang xử lý', 'Nguyễn Đức Bình'),
+(35, 63, 'Tiền mặt khi nhận hàng', 16000, 'ktx khu A', '0394433666', '2024-03-14 06:50:30', 'Đang xử lý', 'Nguyễn Đức Bình');
 
 -- --------------------------------------------------------
 
@@ -150,21 +149,18 @@ CREATE TABLE `order_item` (
 --
 
 INSERT INTO `order_item` (`order_id`, `product_id`, `quantity_item`, `price`) VALUES
-(16, 1, 13, 16000),
-(16, 2, 2, 19000),
-(16, 3, 4, 19000),
-(16, 6, 1, 35000),
-(16, 9, 0, 16000),
-(17, 2, 1, 19000),
-(17, 3, 1, 19000),
-(18, 2, 2, 19000),
 (19, 1, 1, 19000),
 (20, 16, 1, 19000),
 (21, 16, 1, 19000),
 (22, 17, 1, 19000),
-(23, 10, 1, 19000),
-(24, 22, 1, 19000),
-(25, 22, 1, 19000);
+(25, 22, 1, 19000),
+(26, 1, 1, 16000),
+(26, 2, 1, 19000),
+(27, 1, 1, 16000),
+(27, 2, 1, 19000),
+(28, 1, 1, 16000),
+(34, 1, 1, 16000),
+(35, 1, 1, 16000);
 
 -- --------------------------------------------------------
 
@@ -194,7 +190,8 @@ INSERT INTO `post` (`post_id`, `title`, `content`, `updated_at`, `image`) VALUES
 (7, 'MỪNG NGÀY 8 THÁNG 3 – HỒNG TRÀ NGÔ GIA GỬI TẶNG MÓN QUÀ TUYỆT VỜI CHO PHÁI ĐẸP', 'Nhân dịp kỷ niệm Ngày Quốc tế Phụ nữ 8 tháng 3, Hồng Trà Ngô Gia xin gửi đến quý khách hàng một chương trình đặc biệt và ý nghĩa. Trong ngày 8/3, khi quý khách nữ đến bất kỳ chi nhánh nào của Hồng Trà Ngô Gia và đặt một món đồ uống bất kỳ trong menu, sẽ được tặng kèm một cái Pudding Socola ngon tuyệt để thưởng thức.\r\n\r\nLà một trong những món Topping vừa được cho ra mắt gần đây tại Hồng Trà Ngô Gia, pudding socola đem lại hương vị ngọt ngào, hấp dẫn và rất thích hợp để làm quà tặng cho người phụ nữ thân yêu nhân dịp 8/3.\r\n\r\nHồng Trà Ngô Gia hy vọng rằng chương trình này sẽ giúp quý khách hàng thưởng thức những món ngon cùng không khí rộn ràng, ấm áp trong ngày 8/3.\r\n\r\nHãy đến Hồng Trà Ngô Gia để tận hưởng chương trình ưu đãi này và gửi lời chúc tốt đẹp đến người phụ nữ yêu thương của mình nhé!\r\n\r\nĐiều kiện áp dụng chương trình:\r\n\r\nÁp dụng khi mua hàng trực tiếp tại cửa hàng\r\nÁp dụng khi khách hàng nữ mua một đồ uống bất kỳ kèm Like và Comment bài viết trên Fanpage với nội dung “Vẫn là Hồng Trà Ngô Gia uống ngon nhất”\r\nThời gian diễn ra duy nhất trong ngày 08/03/2023', '2023-11-17 20:09:45', 'https://wujiateavn.com/files/upload2/files/h%C3%ACnh%207-3.jpg'),
 (8, 'GRAND OPENING LINH ĐÔNG THỦ ĐỨC', 'Bắt đầu từ ngày 26/11 Hồng Trà Ngô Gia mời bạn đến tân gia chi nhánh mới tại 98B Linh Đông, Phường Linh Đông, Thủ Đức nà\r\n\r\nSiêu Ưu Đãi\r\n\r\nMUA 1 TẶNG 1 đến hết ngày 28/11/2022\r\nhương trình chỉ áp dụng tại cửa hàng đang khai trương\r\n\r\nMua 1 tặng 1 áp dụng trên toàn menu\r\n\r\nKhông áp dụng giao hàng và các chương trình khuyến mãi đang hoạt động khác.', '2023-11-17 20:10:23', 'https://wujiateavn.com/files/upload2/images/%E5%B8%A4%E6%A2%93%E6%9E%99-1.jpg'),
 (9, 'TẬN HƯỞNG HƯƠNG VỊ MỚI CÙNG TRÀ SỮA SOCOLA VÀ TRÀ CHANH LÁ DỨA', 'Theo bạn thì hai món này kết hợp với Topping nào sẽ là tuyệt nhất? Cùng nhau chia sẻ kinh nghiệm ăn uống để mọi cùng tham khảo và thưởng thức thử nà!\r\n\r\nĐừng có quên nắm tay kéo vai đứa bạn thân đi cùng đó nha! Tag ngay hội bạn cùng đam mê vào hóng đi nà các bạn ơiiii', '2023-11-17 20:11:01', 'https://wujiateavn.com/files/upload2/images/ok-min.gif'),
-(10, 'BẠN THỨC KHUYA SĂN SALE SỘP PEE CÒN TUI SĂN SALE HỒNG TRÀ NGÔ GIA', 'Chương trình chỉ áp dụng tại cửa hàng đang khai trương\r\n\r\nMua 1 tặng 1 áp dụng trên toàn menu\r\n\r\nKhông áp dụng giao hàng và các chương trình khuyến mãi đang hoạt động khác.\r\n\r\n-------\r\n\r\nTỚI QUẨY VỚI CHÚNG MÌNH NHOO CÁC BẠN OI\r\n\r\nĐịa chỉ :  763 Nguyễn Ảnh Thủ,P Trung Mỹ Tây, Q12\r\nHãy @tag thêm vài người bạn thân iu dấu của mình để nhận thêm nhiều ưu đãi nhaaa\r\n\r\n------\r\n\r\nWebsite: https://wujiateavn.com/\r\n\r\n#HongTraNgoGia\r\n\r\n#trasuadailoan\r\n\r\n#GrandOpening\r\n\r\n#NguyễnẢnhThủ\r\n\r\n#PhườngTrungMỹTây\r\n\r\n#Quận12\r\n', '2023-11-17 20:12:42', 'https://wujiateavn.com/files/upload/files/test.jpg');
+(10, 'BẠN THỨC KHUYA SĂN SALE SỘP PEE CÒN TUI SĂN SALE HỒNG TRÀ NGÔ GIA', 'Chương trình chỉ áp dụng tại cửa hàng đang khai trương\r\n\r\nMua 1 tặng 1 áp dụng trên toàn menu\r\n\r\nKhông áp dụng giao hàng và các chương trình khuyến mãi đang hoạt động khác.\r\n\r\n-------\r\n\r\nTỚI QUẨY VỚI CHÚNG MÌNH NHOO CÁC BẠN OI\r\n\r\nĐịa chỉ :  763 Nguyễn Ảnh Thủ,P Trung Mỹ Tây, Q12\r\nHãy @tag thêm vài người bạn thân iu dấu của mình để nhận thêm nhiều ưu đãi nhaaa\r\n\r\n------\r\n\r\nWebsite: https://wujiateavn.com/\r\n\r\n#HongTraNgoGia\r\n\r\n#trasuadailoan\r\n\r\n#GrandOpening\r\n\r\n#NguyễnẢnhThủ\r\n\r\n#PhườngTrungMỹTây\r\n\r\n#Quận12\r\n', '2023-11-17 20:12:42', 'https://wujiateavn.com/files/upload/files/test.jpg'),
+(11, 'thợ lặn', 'đây là ảnh thợ lặn', '2023-12-02 08:15:50', 'https://images.unsplash.com/photo-1682686581551-867e0b208bd1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
 
 -- --------------------------------------------------------
 
@@ -244,7 +241,11 @@ INSERT INTO `product` (`product_id`, `name`, `category_id`, `description`, `imag
 (23, 'Trà xanh yakult', 5, 'Trà xanh yakult với hương vị thanh mát, chát nhẹ. Giúp giải nhiệt cơ thể và tăng cường hệ tiêu hóa.', 'tra-xanh-yakult-ciiwdu3q (2).jpg', 10, 239000, 19000, '2023-11-30 08:50:13'),
 (24, 'Hồng trà yakult', 5, 'Hương vị hồng trà truyền thông được làm mới bằng vị ngọt nhẹ của sữa chua uống yakult.', 'hong-tra-yakult-dai-loan-71tovysw (2).jpg', 10, 239000, 19000, '2023-11-30 08:51:08'),
 (25, 'Bí đao yakult Ngô Gia', 5, 'Bí đao yakult Ngô Gia - Bí đao thanh mát hòa quyện với yakult dịu ngọt, vừa giải nhiệt cơ thể vừa tăng cường hệ tiêu hóa.', 'bi-dao-yakult-ngo-gia-des0qgwx (2).jpg', 10, 239000, 19000, '2023-11-30 08:52:17'),
-(26, 'Hồng trà yakult Đài Loan', 5, 'Hồng trà yakult Đài Loan', 'hong-tra-yakult-vai-thieu-p2eqjjyy (2).jpg', 10, 239000, 19000, '2023-11-17 21:53:16');
+(26, 'Hồng trà yakult Đài Loan', 5, 'Hồng trà yakult Đài Loan', 'hong-tra-yakult-vai-thieu-p2eqjjyy (2).jpg', 10, 239000, 19000, '2023-11-17 21:53:16'),
+(27, 'sản phẩm mới', 3, 'đây là sản phẩm mới', 'photo-1682687220777-2c60708d6889.png', 30, 20000, 15000, '2023-12-02 08:17:44'),
+(28, 'sản phẩm mới', 1, 'mô tả sản phẩm 2', 'Bản sao của database schema.drawio.png', 30, 20000, 15000, '2023-12-02 08:20:54'),
+(29, 'sản phẩm mới', 1, 'mô tả sản phẩm', 'EERD final-New.drawio.png', 30, 20000, 15000, '2023-12-02 08:21:17'),
+(30, 'asdf', 2, 'asdfasdf', 'photo-1682687220777-2c60708d6889.png', 3, 345, 3223, '2023-12-08 02:54:36');
 
 -- --------------------------------------------------------
 
@@ -266,13 +267,11 @@ CREATE TABLE `review` (
 --
 
 INSERT INTO `review` (`review_id`, `product_id`, `user_id`, `title`, `content`, `updated_at`) VALUES
-(3, 1, 38, 'Đánh giá', 'vị trà đậm đà, độ ngọt vừa phải có thể tự gia giảm tuỳ ý, menu siêu nhiều món, giá cực kì hạt dẻ chỉ từ 15-35k', '2023-11-30 08:59:03'),
 (4, 1, 46, 'Đánh giá', 'ly 960cc to đùng mà chỉ tầm 30k thui, uống bao phê', '2023-11-30 08:59:44'),
 (5, 16, 54, 'Đánh giá', 'hồng trà thơm, ít ngọt, vị chanh chua nhẹ, must-try nha.', '2023-11-30 09:20:56'),
 (6, 22, 53, 'Đánh giá', 'Đúng nghĩa là đập tan cơn khát với đủ các loại giải khát trên đời. Menu dòm khủng bố món nào cũng có. Trung bình một ly size 1 lít luôn topping chỉ 23-24k', '2023-11-30 09:22:20'),
-(7, 22, 47, 'Đánh giá', 'hương vị chuẩn Đài Loan nguyên gốc, không pha tạp hay thay đổi tí gì so với thương hiệu mẹ ở Đài.', '2023-11-30 09:23:00'),
 (8, 17, 52, 'Đánh giá', 'ly này có hậu vị chua nhẹ nhẹ, bí đao thơm bát ngát, vừa dễ uống vừa hổng lo béo ú còn trân châu khoai môn thì dai, dẻo, nhai nhai vui mà ngon nữa.', '2023-11-30 09:23:54'),
-(9, 10, 38, 'Đánh giá', 'món này ngon làm sao khỏi khen thêm mà chất lượng ly nước tại NGÔ GIA thì như chân lý luôn á, ngon xịn rẻ nữa, ly siêu to mà 25k thôi đó, phải thử liền nghe tui đi!', '2023-11-30 09:25:21');
+(10, 1, 56, 'đánh giá sản phẩm', 'sản phẩm rất ngon', '2023-12-02 08:12:19');
 
 -- --------------------------------------------------------
 
@@ -298,20 +297,20 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `email`, `password`, `name`, `avatar`, `phone`, `address`, `updated_at`, `verify_code`, `active`) VALUES
-(38, 'binhnguyen3816@gmail.com', 'bla', 'Nguyễn Đức Bình', NULL, '0394433666', 'https://www.facebook.com/nguyenducbinh2003', '2023-11-18 01:44:57', 246924778, 1),
 (43, 'nguyenducbinh26092003@gmail.com', 'Bla2003@', 'Nguyễn Đức Bình', NULL, '0394433666', 'https://www.facebook.com/nguyenducbinh2003', '2023-11-18 02:01:07', 676336091, 1),
 (44, 'binh381672943@gmail.com', 'Binh2003@', 'binh3816', NULL, '0394433666', 'https://www.facebook.com/nguyenducbinh2003', '2023-11-23 08:20:05', 338474221, NULL),
 (45, 'bbinh381672943@gmail.com', 'Binh2003@', 'binh3816', NULL, '0394433666', 'https://www.facebook.com/nguyenducbinh2003', '2023-11-23 08:21:19', 275643456, NULL),
 (46, 'hien.lequang@hcmut.edu.vn', 'sus16103', 'Lê Quang Hiển', NULL, '0359110455', 'Ký túc xá Khu B Đại học Quốc gia', '2023-11-30 06:37:20', NULL, NULL),
-(47, 'levukhoinguyen@gmail.com', 'nguyen123', 'Lê Vũ Khôi Nguyên', NULL, NULL, '12 Nguyễn Huệ', '2023-11-30 09:07:28', NULL, NULL),
 (48, 'khanh.lehcmut@hcmut.edu.vn', 'khanh123', 'Lê Bảo Khánh', NULL, NULL, NULL, '2023-11-30 09:08:43', NULL, NULL),
 (49, 'anh.maikhmt23@hcmut.edu.vn', 'danh11111', 'Mai Hoàng Danh', NULL, NULL, NULL, '2023-11-30 09:10:09', NULL, NULL),
 (50, 'duong.hathuy@hcmut.edu.vn ', 'something123', 'Hà Thùy Dương', NULL, NULL, 'Ký túc xá Khu A Đại học Quốc gia', '2023-11-30 09:12:32', NULL, NULL),
-(51, 'thao.vonguyen@hcmut.edu.vn', '', 'Võ Nguyễn Đoan Thảo', NULL, NULL, 'Ký túc xá Bách khoa, 497 Hoà Hảo, Phường 7, Quận 10, Thành phố Hồ Chí Minh', '2023-11-30 09:18:47', NULL, NULL),
 (52, 'quang.nguyensvk21@hcmut.edu.vn', 'quangti', 'Nguyễn Văn Ngọc Quang', 'https://www.facebook.com/photo/?fbid=1055547401987', NULL, 'Ký túc xá Khu A Đại học Quốc gia', '2023-11-30 09:16:21', NULL, NULL),
 (53, 'ha.dinh2003@hcmut.edu.vn', 'ha123', 'Đinh Vũ Hà', NULL, NULL, NULL, '2023-11-30 09:16:12', NULL, NULL),
 (54, 'tung.nguyen2k3hcmut@hcmut.edu.vn', 'tung_nguyen', 'Nguyễn Duy Tùng', NULL, NULL, 'Ký túc xá Khu B Đại học Quốc gia', '2023-11-30 09:17:19', NULL, NULL),
-(55, ' ngan.lengan2003@hcmut.edu.vn', 'nganle_123', 'Lê Thị Kim Ngân', NULL, NULL, 'Ký túc xá Khu B Đại học quốc gia', '2023-11-30 09:19:55', NULL, NULL);
+(55, ' ngan.lengan2003@hcmut.edu.vn', 'nganle_123', 'Lê Thị Kim Ngân', NULL, NULL, 'Ký túc xá Khu B Đại học quốc gia', '2023-11-30 09:19:55', NULL, NULL),
+(56, 'bla@gmail.com', '$2y$10$0MLNO29tQmpO/8im5IJX2uy9uvPd8oiN4Je4.3s/pP/xjZN08WFRO', 'Nguyễn Đức Bình', NULL, '0394433666', 'bla', '2023-12-02 08:12:40', 127529064, NULL),
+(58, 'rac@gmail.com', '$2y$10$BHYTTAUudjX6.TNJPalv9eSqL.U0s/70Jg3D1XO4CXbYbM0Xc9mFi', 'tài khoản', NULL, '0394433666', 'https://www.facebook.com/nguyenducbinh2003', '2023-12-02 08:22:33', 456411799, NULL),
+(63, 'binhnguyen3816@gmail.com', '$2y$10$nvLCZ8sgf7YswxdmMv8Hn.7mOqkXGYOI8VbqRYuk5IUEq1ytkag8i', 'Nguyễn Đức Bình', NULL, '0394433666', 'https://www.facebook.com/nguyenducbinh2003', '2024-03-14 06:49:36', 206309, 1);
 
 --
 -- Indexes for dumped tables
@@ -396,37 +395,37 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- Constraints for dumped tables

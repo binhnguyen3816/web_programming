@@ -117,7 +117,7 @@ _To run the demo version of this application, you need to follow these steps:_
 ## Contact 📧
 <h3>Team members:</h3>
 
-* Nguyễn Đức Bình - [@your_github](https://github.com/binhnguyen3816) - email@example.com
+* Nguyễn Đức Bình - [@binhnguyen3816](https://github.com/binhnguyen3816) - binhnguyen3816@gmail.com
 * Lê Quang Hiển - [@your_github](https://github.com/hienlq16103) - email@example.com
 * Nguyễn Công Anh Luân - [@Conganhluan](https://github.com/Conganhluan) - conganhluan@gmail.com
 * Nguyễn Duy Tùng - [@tndgoat](https://github.com/tndgoat) - tungnd.goat@gmail.com
