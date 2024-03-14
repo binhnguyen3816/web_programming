@@ -3,7 +3,7 @@
     ob_start();
     $rootPath = '/Lap_trinh_web/admin';
     require_once '../../database/DB.php';
-  
+    
     if (isset($_GET['id'])) {
         settype($_GET['id'], 'int');
         if ($_GET['id'] == 0) header('location: ../../404.php');

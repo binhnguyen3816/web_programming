@@ -18,13 +18,13 @@ function sendMailOrder($mail, $receiver, $content) {
         $mail->SMTPSecure = "tls"; //ssl
         $mail->Host = 'smtp.gmail.com';                     
         $mail->Port = 587; //465
-        $mail->Username = 'tungnd.goat@gmail.com';
-        $mail->Password = 'xazq gfwi qmlh jlic';                          
+        $mail->Username = 'binh381672943@gmail.com';
+        $mail->Password = 'uvjc lvnw ptrc cwbr';                          
         
         // Recipients
-        $mail->setFrom('tungnd.goat@gmail.com', 'HongTraNgoGia_ADMIN');
+        $mail->setFrom('binh381672943@gmail.com', 'HongTraNgoGia_ADMIN');
         $mail->addAddress($receiver['email'], $receiver['name']);     
-        $mail->addReplyTo('tungnd.goat@gmail.com', 'HongTraNgoGia_ADMIN');
+        $mail->addReplyTo('binh381672943@gmail.com', 'HongTraNgoGia_ADMIN');
 
         // Content
         $mail->isHTML(true);                                  
@@ -35,7 +35,7 @@ function sendMailOrder($mail, $receiver, $content) {
                                 <p>Cảm ơn quý khách đã đặt hàng tại <a href="#">HongTraNgoGia_ADMIN</a>.</p>
                                 <p>Đơn hàng quý khách sẽ sớm được gửi đi sau khi nhân viên của chúng tôi hoàn tất các thủ tục.</p>
                                 <div>'.$content.'</div>
-                                <p>Mọi thắc mắc xin vui lòng liên hệ qua gmail: tungnd.goat@gmail.com</p>
+                                <p>Mọi thắc mắc xin vui lòng liên hệ qua gmail: binh381672943@gmail.com</p>
                                 <p>Xin kính chúc sức khỏe và may mắn!</p>
                                 <p><b style="color: blue">HongTraNgoGia_ADMIN</b></p>
                             </body>
@@ -58,13 +58,13 @@ function verifyEmail($mail, $receiver, $verifyCode) {
         $mail->SMTPSecure = "tls"; //ssl
         $mail->Host = 'smtp.gmail.com';                     
         $mail->Port = 587; //465
-        $mail->Username = 'tungnd.goat@gmail.com';
-        $mail->Password = 'xazq gfwi qmlh jlic';                          
+        $mail->Username = 'binh381672943@gmail.com';
+        $mail->Password = 'uvjc lvnw ptrc cwbr';                          
         
         // Recipients
-        $mail->setFrom('tungnd.goat@gmail.com', 'HongTraNgoGia_ADMIN');
+        $mail->setFrom('binh381672943@gmail.com', 'HongTraNgoGia_ADMIN');
         $mail->addAddress($receiver['email'], $receiver['name']);     
-        $mail->addReplyTo('tungnd.goat@gmail.com', 'HongTraNgoGia_ADMIN');
+        $mail->addReplyTo('binh381672943@gmail.com', 'HongTraNgoGia_ADMIN');
 
         // Content
         $mail->isHTML(true);                                  
@@ -78,7 +78,7 @@ function verifyEmail($mail, $receiver, $verifyCode) {
                                 <p>Quý khách vui lòng điền mã xác thực để sử dụng tài khoản này trên Website của chúng tôi.</p>
                                 <p>Mã xác thực kích hoạt tài khoản:</p>
                                 <div><b>'.$verifyCode.'</b></div>
-                                <p>Mọi thắc mắc xin vui lòng liên hệ qua gmail: tungnd.goat@gmail.com</p>
+                                <p>Mọi thắc mắc xin vui lòng liên hệ qua gmail: binh381672943@gmail.com</p>
                                 <p>Xin kính chúc sức khỏe và may mắn!</p>
                                 <p><b style="color: blue">HongTraNgoGia_ADMIN</b></p>
                             </body>
@@ -101,13 +101,13 @@ function resetPassword($mail, $receiver) {
         $mail->SMTPSecure = "tls"; //ssl
         $mail->Host = 'smtp.gmail.com';                     
         $mail->Port = 587; //465
-        $mail->Username = 'tungnd.goat@gmail.com';
-        $mail->Password = 'xazq gfwi qmlh jlic';                          
+        $mail->Username = 'binh381672943@gmail.com';
+        $mail->Password = 'uvjc lvnw ptrc cwbr';                          
         
         // Recipients
-        $mail->setFrom('tungnd.goat@gmail.com', 'HongTraNgoGia_ADMIN');
+        $mail->setFrom('binh381672943@gmail.com', 'HongTraNgoGia_ADMIN');
         $mail->addAddress($receiver['email'], $receiver['name']);     
-        $mail->addReplyTo('tungnd.goat@gmail.com', 'HongTraNgoGia_ADMIN');
+        $mail->addReplyTo('binh381672943@gmail.com', 'HongTraNgoGia_ADMIN');
 
         // Content
         $mail->isHTML(true);                                  
@@ -119,7 +119,7 @@ function resetPassword($mail, $receiver) {
                                 <p>Tên đăng nhập: <b style="color:blue">'.$receiver['email'].'</b></p>
                                 <p>Mật khẩu: <b style="color:blue">'.$receiver['password'].'</b></p>
                                 <p>Từ giờ quý khách có thể đăng nhập lại trên Website của chúng tôi.</p>
-                                <p>Mọi thắc mắc xin vui lòng liên hệ qua gmail: tungnd.goat@gmail.com</p>
+                                <p>Mọi thắc mắc xin vui lòng liên hệ qua gmail: binh381672943@gmail.com</p>
                                 <p>Xin kính chúc sức khỏe và may mắn!</p>
                                 <p><b style="color: blue">HongTraNgoGia_ADMIN</b></p>
                             </body>
@@ -142,13 +142,13 @@ function sendLink2ChangePWD($mail, $receiver, $content) {
         $mail->SMTPSecure = "tls"; //ssl
         $mail->Host = 'smtp.gmail.com';                     
         $mail->Port = 587; //465
-        $mail->Username = 'tungnd.goat@gmail.com';
-        $mail->Password = 'xazq gfwi qmlh jlic';                          
+        $mail->Username = 'binh381672943@gmail.com';
+        $mail->Password = 'uvjc lvnw ptrc cwbr';                          
         
         // Recipients
-        $mail->setFrom('tungnd.goat@gmail.com', 'HongTraNgoGia_ADMIN');
+        $mail->setFrom('binh381672943@gmail.com', 'HongTraNgoGia_ADMIN');
         $mail->addAddress($receiver['email'], $receiver['name']);     
-        $mail->addReplyTo('tungnd.goat@gmail.com', 'HongTraNgoGia_ADMIN');
+        $mail->addReplyTo('binh381672943@gmail.com', 'HongTraNgoGia_ADMIN');
 
         // Content
         $mail->isHTML(true);                                  
@@ -159,7 +159,7 @@ function sendLink2ChangePWD($mail, $receiver, $content) {
                                 <p>Chúng tôi vừa nhận được yêu cầu thay đổi mật khẩu cho tài khoản của bạn:</p>
                                 <p>Bạn hãy Click vào đường dẫn dưới đây để có thể thay đổi mật khẩu:</p>
                                 <div>'.$content.'</div>
-                                <p>Mọi thắc mắc xin vui lòng liên hệ qua gmail: tungnd.goat@gmail.com</p>
+                                <p>Mọi thắc mắc xin vui lòng liên hệ qua gmail: binh381672943@gmail.com</p>
                                 <p>Xin kính chúc sức khỏe và may mắn!</p>
                                 <p><b style="color: blue">HongTraNgoGia_ADMIN</b></p>
                             </body>

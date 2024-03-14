@@ -116,9 +116,7 @@ if (isset($_POST['login_user'])) {
               <div class="input-group flex-nowrap password-container">
                 <span class="input-group-text"><i class="fa-light fa-key"></i></span>
                 <input type="password" id="password" class="form-control" name="password" value="<?php echo $password; ?>" placeholder="Password">
-                <span>
-                  <i class="far fa-eye" id="toggle-password"></i>
-                </span>
+                
               </div>
             </div>
             
