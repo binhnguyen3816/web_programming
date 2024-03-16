@@ -11,7 +11,7 @@
   <p align="center">
     Designing the interface and implementing basic features for the Hong tra Ngo Gia website!
     <br />
-    <a href="[https://www.overleaf.com/read/bdqnrpqtnddn#f58392](https://drive.google.com/file/d/1MEQdMgENLMQfOlt5xRjyzVcSUBsbpNCY/view?usp=sharing)"><strong>Explore the docs »</strong></a>
+    <a href="https://drive.google.com/file/d/1MEQdMgENLMQfOlt5xRjyzVcSUBsbpNCY/view?usp=sharing"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="#getting-started-🚀">View Demo</a>
