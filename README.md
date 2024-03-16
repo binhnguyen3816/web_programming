@@ -32,9 +32,9 @@
 In this semester (HK231), my team has been assigned an Assignment requiring the designing of the interface and implementation of basic features for a company or business website. All members in the group reached a consensus and decided to choose the Hong Tra Ngo Gia website as a template.
 
 Here's why:
-* We are asians and we love bubble tea, of course LOL.
+* We are asians and we love bubble tea.
 * We also find their news often updated, which have given us lots of data and save us time from creating ones,
-* And the simplicity of their website LOL.
+* And the simplicity of their website.
 
 Of course, we have faced many difficulties during cloning the website, the flexibility really screwed us up and sometimes made us cry every single night. We, however, have managed to work harder and together and then, the problems were solved and this website was born. It is a great pleasant for us to present this project to you, hope you enjoy it and find it useful for your project too LOL.
 
@@ -90,7 +90,7 @@ _To run the demo version of this application, you need to follow these steps:_
 2. Clone the Repository and put it in C:\xampp\htdocs:
    ```sh
    cd C:\xampp\htdocs
-   git clone https://github.com/Conganhluan/Lap_trinh_web.git
+   git clone https://github.com/binhnguyen3816/web_programming.git
    ```
 3. Click 'Start' for Apache and MySQL in the XAMPP interface.
 4. Go to the URL http://localhost/phpmyadmin/ to add a database.
@@ -122,7 +122,7 @@ _To run the demo version of this application, you need to follow these steps:_
 * Nguyễn Công Anh Luân - [@Conganhluan](https://github.com/Conganhluan) - conganhluan@gmail.com
 * Nguyễn Duy Tùng - [@tndgoat](https://github.com/tndgoat) - tungnd.goat@gmail.com
 
-Project Link: [https://github.com/Conganhluan/Lap_trinh_web](https://github.com/Conganhluan/Lap_trinh_web)
+Project Link: [https://github.com/binhnguyen3816/web_programming](https://github.com/binhnguyen3816/web_programming)
 
 <p align="right">[<a href="#readme-top">Back to Top 🔝</a>]</p>
 
